@@ -1081,6 +1081,11 @@ function WebGLRenderer( parameters ) {
 
 		projectObject( scene, camera, _this.sortObjects );
 
+		// insertion point for custom scene graph traversal
+		if(this.onCustomProjectObjects) {
+			this.onCustomProjectObjects( projectObject, camera, _this.sortObjects );
+		}
+
 		if ( _this.sortObjects === true ) {
 
 			currentRenderList.sort();
