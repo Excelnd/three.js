@@ -21955,8 +21955,10 @@
 			projectObject( scene, camera, _this.sortObjects );
 
 			// insertion point for custom scene graph traversal
-			if(this.onCustomProjectObjects) {
-				this.onCustomProjectObjects( projectObject, camera, _this.sortObjects );
+			if ( scene.onCustomProjectObjects ) {
+
+				scene.onCustomProjectObjects( projectObject, camera, _this.sortObjects );
+
 			}
 
 			if ( _this.sortObjects === true ) {
